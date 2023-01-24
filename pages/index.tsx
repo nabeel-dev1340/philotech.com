@@ -14,7 +14,7 @@ const Home = () => {
         <title>PhiloTech</title>
       </Head>
       <Container>
-        {/* <Navigation /> */}
+        <Navigation />
         <Hero />
         <TechStack />
         <Projects />
