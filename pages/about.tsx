@@ -5,25 +5,21 @@ import Navigation from "../components/Navigation";
 import TechStack from "../components/TechStack";
 import Hero from "../components/Hero";
 import Footer from "../components/Footer";
-import Projects from "../components/Projects";
 
-const Home = () => {
+const About = () => {
   return (
     <>
       <Head>
-        <title>PhiloTech</title>
+        <title>About Us</title>
       </Head>
       <Container>
-        {/* <Navigation /> */}
-        <Hero />
-        <TechStack />
-        <Projects />
+        <Navigation />
         <Footer />
       </Container>
     </>
   );
 };
 
-export default Home;
+export default About;
 
 const Container = styled.div``;
