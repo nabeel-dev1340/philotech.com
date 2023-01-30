@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import ProjectCard from "../ProjectCard";
+import Link from "next/link";
 
 const Projects = () => {
   const [active, setActive] = React.useState("web");
@@ -32,15 +34,36 @@ const Projects = () => {
           Mobile
         </StyledToggleItem>
       </StyledToggleContainer>
+      <StyledCardsContainer>
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+      </StyledCardsContainer>
+      <StyledButton>
+        <Link href="/contact" style={LinkStyles}>
+          See All Projects
+        </Link>
+      </StyledButton>
     </Container>
   );
 };
 
 export default Projects;
 
+const LinkStyles = {
+  textDecoration: "none",
+  color: "white",
+};
+
 const Container = styled.div`
   max-width: 1400px;
   margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 const StyledSectionHeader = styled.div`
   text-align: center;
@@ -60,6 +83,18 @@ const StyledBodycopy = styled.p`
   color: #a7a7a7;
 `;
 
+const StyledButton = styled.div`
+  width: 150px;
+  height: 25px;
+  padding: 20px;
+  text-align: center;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 18px;
+  background: linear-gradient(90deg, #13b0f5 -2.06%, #e70faa 100%);
+  margin-top: 50px;
+`;
+
 const StyledToggleContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -75,4 +110,12 @@ const StyledToggleItem = styled("div")<{ active: boolean }>`
   text-align: center;
   cursor: pointer;
   font-weight: 600;
+`;
+
+const StyledCardsContainer = styled.div`
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 60px;
 `;

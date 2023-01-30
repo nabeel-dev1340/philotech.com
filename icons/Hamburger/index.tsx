@@ -9,7 +9,6 @@ const HamburgerIcon = () => {
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <title>Menu</title>
       <g
         id="Page-1"
         stroke="none"
@@ -32,7 +31,7 @@ const HamburgerIcon = () => {
             x2="19"
             y2="7"
             id="Path"
-            stroke="#ffffff"
+            stroke="#cccccc"
             stroke-width="2"
             stroke-linecap="round"
           ></line>
@@ -42,7 +41,7 @@ const HamburgerIcon = () => {
             x2="19"
             y2="17"
             id="Path"
-            stroke="#fff"
+            stroke="#cccccc"
             stroke-width="2"
             stroke-linecap="round"
           ></line>
@@ -52,7 +51,7 @@ const HamburgerIcon = () => {
             x2="19"
             y2="12"
             id="Path"
-            stroke="#fff"
+            stroke="#cccccc"
             stroke-width="2"
             stroke-linecap="round"
           ></line>

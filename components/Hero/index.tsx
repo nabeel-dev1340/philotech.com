@@ -35,7 +35,7 @@ const LinkStyles = {
 
 const Container = styled.div`
   max-width: 1400px;
-  margin: 200px auto;
+  margin: 100px auto;
   display: flex;
   flex-direction: column;
   align-items: center;

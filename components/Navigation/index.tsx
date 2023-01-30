@@ -105,7 +105,7 @@ const StyledNavItems = styled("ul")<{ isOpen: boolean }>`
   @media only screen and (max-width: 768px) {
     display: ${({ isOpen }) => (isOpen ? "" : "none")};
     position: absolute;
-    top: 8%;
+    top: 7%;
     left: 0;
     right: 0;
     background: #1e1e1e;
