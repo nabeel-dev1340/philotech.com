@@ -42,6 +42,10 @@ export default class MyDocument extends Document {
         </Head>
         <body>
           <script>0</script>
+          <script
+            defer
+            src="/node_modules/@lottiefiles/lottie-player/dist/lottie-player.js"
+          ></script>
           <Main />
           <NextScript />
         </body>

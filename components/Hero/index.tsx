@@ -1,27 +1,41 @@
 import Link from "next/link";
-import React from "react";
+import React, { useRef } from "react";
 import styled, { keyframes } from "styled-components";
 
 const Hero = () => {
+  const ref = useRef(null);
+  React.useEffect(() => {
+    import("@lottiefiles/lottie-player");
+  });
+
   return (
     <Container>
-      <StyledHeadline>
-        <span>Develop Your&nbsp;</span>
-        <GradientHeadline>&lt; Innovation &gt;</GradientHeadline>
-      </StyledHeadline>
-      <StyledBodycopy>
-        &quot;Our team of experts is dedicated to delivering cutting-edge
-        software solutions that drive efficiency and productivity for businesses
-        of all sizes. With a focus on innovation and user-centered design, we
-        empower our clients to achieve their goals and stay ahead of the
-        competition.&quot;
-      </StyledBodycopy>
-      <StyledButton>
-        <Link href="/contact" style={LinkStyles}>
-          Let&apos;s Get Started
-        </Link>
-      </StyledButton>
-      <StyledLine />
+      <LeftContainer>
+        <StyledHeadline>
+          <span>Develop Your&nbsp;</span>
+          <GradientHeadline>&lt;Innovation&gt;</GradientHeadline>
+        </StyledHeadline>
+        <StyledBodycopy>
+          &quot;Our team of experts is dedicated to delivering cutting-edge
+          software solutions that drive efficiency and productivity for
+          businesses of all sizes. With a focus on innovation and user-centered
+          design.&quot;
+        </StyledBodycopy>
+        <StyledButton>
+          <Link href="/contact" style={LinkStyles}>
+            Let&apos;s Get Started
+          </Link>
+        </StyledButton>
+      </LeftContainer>
+      <RightContainer>
+        <lottie-player
+          src="https://assets9.lottiefiles.com/packages/lf20_obkemuop.json"
+          background="transparent"
+          speed="1"
+          loop
+          autoplay
+        ></lottie-player>
+      </RightContainer>
     </Container>
   );
 };
@@ -37,40 +51,52 @@ const Container = styled.div`
   max-width: 1400px;
   margin: 100px auto;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-around;
+  @media only screen and (max-width: 1024px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
-
-const hrAnimation = keyframes`
-0% {
-  transform: translateX(-50%);
-}
-50% {
-  transform: translateX(50%);
-}
-100% {
-  transform: translateX(-50%);
-}`;
 
 const StyledLine = styled.hr`
   opacity: 0.5;
   width: 100%;
-  margin-top: 200px;
+  margin-top: 50px;
+`;
+
+const LeftContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  @media only screen and (max-width: 768px) {
+    align-items: center;
+    gap: 20px;
+  }
+`;
+
+const RightContainer = styled.div`
+  width: 600px;
+  height: 600px;
+  @media only screen and (max-width: 768px) {
+    width: 350px;
+    height: 350px;
+  }
 `;
 
 const StyledHeadline = styled.h1`
+  margin: 0;
   font-weight: 700;
-  font-size: 70px;
+  font-size: 65px;
   color: #cccccc;
-  text-align: center;
+  text-align: left;
   display: flex;
+  flex-direction: column;
   @media only screen and (max-width: 1024px) {
     font-size: 48px;
-    flex-direction: column;
+    align-items: center;
   }
   @media only screen and (max-width: 768px) {
     font-size: 48px;
-    flex-direction: column;
   }
 `;
 
@@ -82,22 +108,27 @@ const GradientHeadline = styled.span`
 `;
 
 const StyledBodycopy = styled.p`
+  width: 600px;
   font-weight: 400;
   font-size: 20px;
   line-height: 26px;
   color: #a7a7a7;
-  text-align: center;
+  text-align: left;
   line-height: 2rem;
+  margin: 0;
+  @media only screen and (max-width: 768px) {
+    width: 350px;
+    text-align: center;
+  }
 `;
 
 const StyledButton = styled.div`
-  width: 200px;
+  width: 150px;
   height: 25px;
   padding: 20px;
   text-align: center;
   border-radius: 20px;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 16px;
   background: linear-gradient(90deg, #13b0f5 -2.06%, #e70faa 100%);
-  margin-top: 20px;
 `;

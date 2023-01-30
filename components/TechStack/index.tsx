@@ -60,7 +60,6 @@ const TechStack = () => {
           <NodeIcon />
         </StyledIcon>
       </StyledIconsContainer>
-      <StyledLine />
     </Container>
   );
 };
@@ -72,11 +71,11 @@ const Container = styled.section`
   margin: 100px auto;
 `;
 
-const StyledLine = styled.hr`
-  opacity: 0.5;
-  width: 100%;
-  margin-top: 100px;
-`;
+// const StyledLine = styled.hr`
+//   opacity: 0.5;
+//   width: 100%;
+//   margin-top: 100px;
+// `;
 
 const StyledSectionHeader = styled.div`
   text-align: center;
