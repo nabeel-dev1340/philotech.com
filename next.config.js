@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["www.ntaskmanager.com"],
+    domains: ["www.appstudio.ca"],
   },
 };
 

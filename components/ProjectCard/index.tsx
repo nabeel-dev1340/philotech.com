@@ -17,7 +17,7 @@ const ProjectCard = ({
     <ProjectCardContainer>
       <StyledImage>
         <Image
-          src="https://www.ntaskmanager.com/wp-content/uploads/2020/01/How-to-manage-a-project-2.png"
+          src="https://www.appstudio.ca/blog/wp-content/uploads/2020/09/Modern-Software-Development.jpg"
           width={300}
           height={250}
           alt={""}
