@@ -3,8 +3,16 @@ import styled from "styled-components";
 import ProjectCard from "../ProjectCard";
 import Link from "next/link";
 
-const Projects = () => {
+const Projects = ({ projects }: any) => {
   const [active, setActive] = React.useState("web");
+
+  const renderCards = () => {
+    if (projects) {
+      return projects
+        .filter((project: any) => project.type.includes(active))
+        .map((project: any) => <ProjectCard key={project.id} {...project} />);
+    }
+  };
 
   const handleToggle = (toggle: string) => {
     setActive(toggle);
@@ -34,14 +42,7 @@ const Projects = () => {
           Mobile
         </StyledToggleItem>
       </StyledToggleContainer>
-      <StyledCardsContainer>
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-      </StyledCardsContainer>
+      <StyledCardsContainer>{renderCards()}</StyledCardsContainer>
       <StyledButton>
         <Link href="/contact" style={LinkStyles}>
           See All Projects

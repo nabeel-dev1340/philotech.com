@@ -6,8 +6,9 @@ import TechStack from "../components/TechStack";
 import Hero from "../components/Hero";
 import Footer from "../components/Footer";
 import Projects from "../components/Projects";
+import ProjectsData from "../data/projects";
 
-const Home = () => {
+const Home = ({ projects }: any) => {
   return (
     <>
       <Head>
@@ -17,12 +18,20 @@ const Home = () => {
         <Navigation />
         <Hero />
         <TechStack />
-        <Projects />
+        <Projects projects={projects} />
         <Footer />
       </Container>
     </>
   );
 };
+
+export async function getStaticProps() {
+  return {
+    props: {
+      projects: ProjectsData,
+    },
+  };
+}
 
 export default Home;
 

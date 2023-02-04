@@ -4,32 +4,34 @@ import Image from "next/image";
 import TechCapsule from "../TechCapsule";
 
 interface ProjectCardProps {
-  name?: string;
-  description?: string;
-  link?: string;
+  title?: string;
+  url?: string | "#";
+  techStack?: string[];
+  images: string[];
 }
 
-const ProjectCard = ({
-  name = "Gym Tracker",
-  link = "#",
-}: ProjectCardProps) => {
+const ProjectCard = ({ title, url, techStack, images }: ProjectCardProps) => {
+  const renderCapsules = () => {
+    if (techStack) {
+      return techStack.map((tech) => <TechCapsule key={tech} name={tech} />);
+    }
+  };
+
   return (
     <ProjectCardContainer>
       <StyledImage>
         <Image
-          src="https://www.appstudio.ca/blog/wp-content/uploads/2020/09/Modern-Software-Development.jpg"
+          src={`/images/${title?.split(" ")[0].toLowerCase()}/${images[0]}`}
           width={300}
           height={250}
           alt={""}
         />
       </StyledImage>
-      <ProjectCardHeading>{name}</ProjectCardHeading>
-      <CapsulesContainer>
-        <TechCapsule name="Flutter" />
-        <TechCapsule name="Firebase" />
-        <TechCapsule name="Redux" />
-      </CapsulesContainer>
-      <ProjectCardLink href={link}>View Project</ProjectCardLink>
+      <ProjectCardHeading>{title}</ProjectCardHeading>
+      <CapsulesContainer>{renderCapsules()}</CapsulesContainer>
+      <ProjectCardLink href={url} target="_blank" rel="noopener noreferrer">
+        View Project
+      </ProjectCardLink>
     </ProjectCardContainer>
   );
 };
@@ -38,7 +40,7 @@ export default ProjectCard;
 
 const ProjectCardContainer = styled.div`
   width: 300px;
-  height: 500px;
+  height: 600px;
   background: #fff;
   color: #000;
   border-radius: 20px;
