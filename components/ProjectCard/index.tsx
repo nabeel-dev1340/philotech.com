@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
 import TechCapsule from "../TechCapsule";
+import Fade from "react-reveal/Fade";
 
 interface ProjectCardProps {
   title?: string;
@@ -18,21 +19,23 @@ const ProjectCard = ({ title, url, techStack, images }: ProjectCardProps) => {
   };
 
   return (
-    <ProjectCardContainer>
-      <StyledImage>
-        <Image
-          src={`/images/${title?.split(" ")[0].toLowerCase()}/${images[0]}`}
-          width={300}
-          height={250}
-          alt={""}
-        />
-      </StyledImage>
-      <ProjectCardHeading>{title}</ProjectCardHeading>
-      <CapsulesContainer>{renderCapsules()}</CapsulesContainer>
-      <ProjectCardLink href={url} target="_blank" rel="noopener noreferrer">
-        View Project
-      </ProjectCardLink>
-    </ProjectCardContainer>
+    <Fade random>
+      <ProjectCardContainer>
+        <StyledImage>
+          <Image
+            src={`/images/${title?.split(" ")[0].toLowerCase()}/${images[0]}`}
+            width={300}
+            height={250}
+            alt={""}
+          />
+        </StyledImage>
+        <ProjectCardHeading>{title}</ProjectCardHeading>
+        <CapsulesContainer>{renderCapsules()}</CapsulesContainer>
+        <ProjectCardLink href={url} target="_blank" rel="noopener noreferrer">
+          View Project
+        </ProjectCardLink>
+      </ProjectCardContainer>
+    </Fade>
   );
 };
 

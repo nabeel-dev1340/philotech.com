@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React, { useRef } from "react";
 import styled, { keyframes } from "styled-components";
+import Fade from "react-reveal/Fade";
 
 const Hero = () => {
   const ref = useRef(null);
@@ -11,31 +12,39 @@ const Hero = () => {
   return (
     <Container>
       <LeftContainer>
-        <StyledHeadline>
-          <span>Develop Your&nbsp;</span>
-          <GradientHeadline>&lt;Innovation&gt;</GradientHeadline>
-        </StyledHeadline>
-        <StyledBodycopy>
-          &quot;Our team of experts is dedicated to delivering cutting-edge
-          software solutions that drive efficiency and productivity for
-          businesses of all sizes. With a focus on innovation and user-centered
-          design.&quot;
-        </StyledBodycopy>
-        <StyledButton>
-          <Link href="/contact" style={LinkStyles}>
-            Let&apos;s Get Started
-          </Link>
-        </StyledButton>
+        <Fade top spy={false}>
+          <StyledHeadline>
+            <span>Develop Your&nbsp;</span>
+            <GradientHeadline>&lt;Innovation&gt;</GradientHeadline>
+          </StyledHeadline>
+        </Fade>
+        <Fade top spy={false}>
+          <StyledBodycopy>
+            &quot;Our team of experts is dedicated to delivering cutting-edge
+            software solutions that drive efficiency and productivity for
+            businesses of all sizes. With a focus on innovation and
+            user-centered design.&quot;
+          </StyledBodycopy>
+        </Fade>
+        <Fade top spy={false}>
+          <StyledButton>
+            <Link href="/contact" style={LinkStyles}>
+              Let&apos;s Get Started
+            </Link>
+          </StyledButton>
+        </Fade>
       </LeftContainer>
-      <RightContainer>
-        <lottie-player
-          src="https://assets9.lottiefiles.com/packages/lf20_obkemuop.json"
-          background="transparent"
-          speed="1"
-          loop
-          autoplay
-        ></lottie-player>
-      </RightContainer>
+      <Fade top spy={false}>
+        <RightContainer>
+          <lottie-player
+            src="https://assets9.lottiefiles.com/packages/lf20_obkemuop.json"
+            background="transparent"
+            speed="1"
+            loop
+            autoplay
+          ></lottie-player>
+        </RightContainer>
+      </Fade>
     </Container>
   );
 };

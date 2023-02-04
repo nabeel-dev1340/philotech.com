@@ -10,7 +10,7 @@ const ProjectsData = [
     images: ["main.png", "1.png", "2.png"],
   },
   {
-    id: 1,
+    id: 2,
     title: "Plank Workout App",
     techStack: [
       "Flutter",
@@ -27,7 +27,7 @@ const ProjectsData = [
     images: ["main.jpeg"],
   },
   {
-    id: 2,
+    id: 3,
     title: "SRAN APP",
     techStack: ["Flutter", "Firebase"],
     description:

@@ -12,6 +12,7 @@ import GitIcon from "../../icons/Git";
 import GithubIcon from "../../icons/Github";
 import NodeIcon from "../../icons/Node";
 import TypescriptIcon from "../../icons/Typescript";
+import Fade from "react-reveal/Fade";
 
 const TechStack = () => {
   return (
@@ -22,44 +23,46 @@ const TechStack = () => {
           Technologies We’ve been working with recently
         </StyledBodycopy>
       </StyledSectionHeader>
-      <StyledIconsContainer>
-        <StyledIcon>
-          <HtmlIcon />
-        </StyledIcon>
-        <StyledIcon>
-          <CssIcon />
-        </StyledIcon>
-        <StyledIcon>
-          <JsIcon />
-        </StyledIcon>
-        <StyledIcon>
-          <TypescriptIcon />
-        </StyledIcon>
-        <StyledIcon>
-          <ReactIcon />
-        </StyledIcon>
-        <StyledIcon>
-          <NextIcon />
-        </StyledIcon>
-        <StyledIcon>
-          <BootStrapIcon />
-        </StyledIcon>
-        <StyledIcon>
-          <TailwindIcon />
-        </StyledIcon>
-        <StyledIcon>
-          <SassIcon />
-        </StyledIcon>
-        <StyledIcon>
-          <GitIcon />
-        </StyledIcon>
-        <StyledIcon>
-          <GithubIcon />
-        </StyledIcon>
-        <StyledIcon>
-          <NodeIcon />
-        </StyledIcon>
-      </StyledIconsContainer>
+      <Fade random>
+        <StyledIconsContainer>
+          <StyledIcon>
+            <HtmlIcon />
+          </StyledIcon>
+          <StyledIcon>
+            <CssIcon />
+          </StyledIcon>
+          <StyledIcon>
+            <JsIcon />
+          </StyledIcon>
+          <StyledIcon>
+            <TypescriptIcon />
+          </StyledIcon>
+          <StyledIcon>
+            <ReactIcon />
+          </StyledIcon>
+          <StyledIcon>
+            <NextIcon />
+          </StyledIcon>
+          <StyledIcon>
+            <BootStrapIcon />
+          </StyledIcon>
+          <StyledIcon>
+            <TailwindIcon />
+          </StyledIcon>
+          <StyledIcon>
+            <SassIcon />
+          </StyledIcon>
+          <StyledIcon>
+            <GitIcon />
+          </StyledIcon>
+          <StyledIcon>
+            <GithubIcon />
+          </StyledIcon>
+          <StyledIcon>
+            <NodeIcon />
+          </StyledIcon>
+        </StyledIconsContainer>
+      </Fade>
     </Container>
   );
 };
