@@ -19,7 +19,7 @@ const ProjectCard = ({ title, url, techStack, images }: ProjectCardProps) => {
   };
 
   return (
-    <Fade random>
+    <Fade left>
       <ProjectCardContainer>
         <StyledImage>
           <Image
@@ -60,8 +60,9 @@ const CapsulesContainer = styled.div`
 `;
 
 const StyledImage = styled.div`
-  border-radius: 15px;
-  overflow: hidden;
+  img {
+    border-radius: 10px;
+  }
 `;
 
 const ProjectCardHeading = styled.h2``;

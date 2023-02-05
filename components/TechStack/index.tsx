@@ -23,46 +23,68 @@ const TechStack = () => {
           Technologies We’ve been working with recently
         </StyledBodycopy>
       </StyledSectionHeader>
-      <Fade random>
-        <StyledIconsContainer>
+      <StyledIconsContainer>
+        <Fade left>
           <StyledIcon>
             <HtmlIcon />
           </StyledIcon>
+        </Fade>
+        <Fade right>
           <StyledIcon>
             <CssIcon />
           </StyledIcon>
+        </Fade>
+        <Fade left>
           <StyledIcon>
             <JsIcon />
           </StyledIcon>
+        </Fade>
+        <Fade right>
           <StyledIcon>
             <TypescriptIcon />
           </StyledIcon>
+        </Fade>
+        <Fade left>
           <StyledIcon>
             <ReactIcon />
           </StyledIcon>
+        </Fade>
+        <Fade right>
           <StyledIcon>
             <NextIcon />
           </StyledIcon>
+        </Fade>
+        <Fade left>
           <StyledIcon>
             <BootStrapIcon />
           </StyledIcon>
+        </Fade>
+        <Fade right>
           <StyledIcon>
             <TailwindIcon />
           </StyledIcon>
+        </Fade>
+        <Fade left>
           <StyledIcon>
             <SassIcon />
           </StyledIcon>
+        </Fade>
+        <Fade right>
           <StyledIcon>
             <GitIcon />
           </StyledIcon>
+        </Fade>
+        <Fade left>
           <StyledIcon>
             <GithubIcon />
           </StyledIcon>
+        </Fade>
+        <Fade right>
           <StyledIcon>
             <NodeIcon />
           </StyledIcon>
-        </StyledIconsContainer>
-      </Fade>
+        </Fade>
+      </StyledIconsContainer>
     </Container>
   );
 };

@@ -10,6 +10,7 @@ import ProjectsData from "../data/projects";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import { Engine } from "tsparticles-engine";
+import Testimonials from "../components/Testimonials";
 
 const Home = ({ projects }: any) => {
   const particlesInit = useCallback(async (engine: Engine) => {
@@ -595,6 +596,7 @@ const Home = ({ projects }: any) => {
         <Hero />
         <TechStack />
         <Projects projects={projects} />
+        <Testimonials />
         <Footer />
       </Container>
     </>

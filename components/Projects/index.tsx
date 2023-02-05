@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import ProjectCard from "../ProjectCard";
 import Link from "next/link";
+const Fade=require('react-reveal/Fade');
 
 const Projects = ({ projects }: any) => {
   const [active, setActive] = React.useState("web");
@@ -25,29 +26,35 @@ const Projects = ({ projects }: any) => {
         <StyledBodycopy>Things that we have built so far</StyledBodycopy>
       </StyledSectionHeader>
       <StyledToggleContainer>
-        <StyledToggleItem
-          active={active.includes("web")}
-          onClick={() => {
-            handleToggle("web");
-          }}
-        >
-          Web
-        </StyledToggleItem>
-        <StyledToggleItem
-          active={active.includes("mobile")}
-          onClick={() => {
-            handleToggle("mobile");
-          }}
-        >
-          Mobile
-        </StyledToggleItem>
+        <Fade left>
+          <StyledToggleItem
+            active={active.includes("web")}
+            onClick={() => {
+              handleToggle("web");
+            }}
+          >
+            Web
+          </StyledToggleItem>
+        </Fade>
+        <Fade right>
+          <StyledToggleItem
+            active={active.includes("mobile")}
+            onClick={() => {
+              handleToggle("mobile");
+            }}
+          >
+            Mobile
+          </StyledToggleItem>
+        </Fade>
       </StyledToggleContainer>
       <StyledCardsContainer>{renderCards()}</StyledCardsContainer>
-      <StyledButton>
-        <Link href="/contact" style={LinkStyles}>
-          See All Projects
-        </Link>
-      </StyledButton>
+      <Fade top>
+        <StyledButton>
+          <Link href="/contact" style={LinkStyles}>
+            See All Projects
+          </Link>
+        </StyledButton>
+      </Fade>
     </Container>
   );
 };
@@ -100,10 +107,12 @@ const StyledToggleContainer = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 40px;
+  gap: 10px;
 `;
 
 const StyledToggleItem = styled("div")<{ active: boolean }>`
   border: 1px solid #cccccc;
+  border-radius: 10px;
   background: ${({ active }) =>
     active ? "linear-gradient(90deg, #13b0f5 -2.06%, #e70faa 100%)" : "#000"};
   padding: 10px 20px;
@@ -111,6 +120,9 @@ const StyledToggleItem = styled("div")<{ active: boolean }>`
   text-align: center;
   cursor: pointer;
   font-weight: 600;
+  box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px,
+    rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px,
+    rgba(240, 46, 170, 0.05) 0px 25px;
 `;
 
 const StyledCardsContainer = styled.div`
