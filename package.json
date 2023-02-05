@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "install-with-legacy-peer-deps": "npm install --legacy-peer-deps"
   },
   "dependencies": {
     "@lottiefiles/lottie-player": "^1.7.0",
