@@ -23,7 +23,7 @@ const TechStack = () => {
           Technologies We’ve been working with recently
         </StyledBodycopy>
       </StyledSectionHeader>
-      <Fade bottom>
+      <Fade top>
         <StyledIconsContainer>
           <StyledIcon>
             <HtmlIcon />
