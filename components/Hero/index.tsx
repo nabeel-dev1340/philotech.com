@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React, { useRef } from "react";
 import styled, { keyframes } from "styled-components";
-import Fade from "react-reveal/Fade";
+const Fade = require("react-reveal/Fade")
 
 const Hero = () => {
   const ref = useRef(null);

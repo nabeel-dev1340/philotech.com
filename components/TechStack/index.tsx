@@ -12,7 +12,7 @@ import GitIcon from "../../icons/Git";
 import GithubIcon from "../../icons/Github";
 import NodeIcon from "../../icons/Node";
 import TypescriptIcon from "../../icons/Typescript";
-import Fade from "react-reveal/Fade";
+const Fade = require("react-reveal/Fade");
 
 const TechStack = () => {
   return (

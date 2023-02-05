@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
 import TechCapsule from "../TechCapsule";
-import Fade from "react-reveal/Fade";
+const Fade = require("react-reveal/Fade")
 
 interface ProjectCardProps {
   title?: string;
