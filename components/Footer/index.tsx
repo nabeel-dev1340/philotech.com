@@ -16,7 +16,7 @@ const Footer = () => {
           </Link>
           <StyledFooterNavItems>
             <StyledFooterNavItem>Designed By PhiloTech.</StyledFooterNavItem>
-            <StyledFooterNavItem>+91 12345 09876</StyledFooterNavItem>
+            <StyledFooterNavItem>+92 301 8162683</StyledFooterNavItem>
             <StyledFooterNavItem>philotech@gmail.com</StyledFooterNavItem>
             <StyledFooterNavItem>
               <StyledLink href="#">

@@ -26,6 +26,7 @@ const ProjectCard = ({ title, url, techStack, images }: ProjectCardProps) => {
             src={`/images/${title?.split(" ")[0].toLowerCase()}/${images[0]}`}
             width={300}
             height={250}
+            layout="fixed"
             alt={""}
           />
         </StyledImage>

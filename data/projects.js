@@ -36,6 +36,16 @@ const ProjectsData = [
     url: "#",
     images: ["main.jpeg"],
   },
+  {
+    id: 4,
+    title: "AI Workout Planner",
+    techStack: ["Next Js", "Node Js", "Chakra UI", "MongoDB", "Express"],
+    description:
+      "AI Workout Planner is a web application that allows users to create workout plans based on their fitness goals. Users can create an account and log in to the application. Users can then create a workout plan based on their fitness goals. The application uses a machine learning algorithm to generate a workout plan based on the user's fitness goals. The application is built with Next Js, Node Js, Chakra UI, MongoDB, and Express.",
+    type: "web",
+    url: "https://www.workout-ai.live/",
+    images: ["main.png"],
+  },
 ];
 
 export default ProjectsData;
