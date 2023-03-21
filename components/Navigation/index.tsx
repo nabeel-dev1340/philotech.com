@@ -32,18 +32,18 @@ const Navigation = () => {
               </Link>
             </StyledNavItem>
             <StyledNavItem>
-              <Link href="/about" style={LinkStyles}>
-                About
-              </Link>
-            </StyledNavItem>
-            <StyledNavItem>
-              <Link href="/tech-stack" style={LinkStyles}>
-                Tech Stack
+              <Link href="/courses" style={LinkStyles}>
+                Courses
               </Link>
             </StyledNavItem>
             <StyledNavItem>
               <Link href="/projects" style={LinkStyles}>
                 Projects
+              </Link>
+            </StyledNavItem>
+            <StyledNavItem>
+              <Link href="/about" style={LinkStyles}>
+                About
               </Link>
             </StyledNavItem>
             <StyledNavItem>
