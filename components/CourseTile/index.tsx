@@ -18,7 +18,7 @@ const CourseTile = ({ name, description, price }: CourseTileProps) => {
       </CourseDetails>
       <Enroller>
         <EnrollerContainer>
-          <Link href={"/"} style={LinkStyles}>
+          <Link href={"/course-reg"} style={LinkStyles}>
             Enroll Now
           </Link>
         </EnrollerContainer>
