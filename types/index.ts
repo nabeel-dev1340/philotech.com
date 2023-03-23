@@ -1,8 +1,8 @@
 export interface CourseFormInput {
-  firstName: string;
-  lastName: string;
-  email: string;
-  phoneNumber: string;
-  course: string;
-  paymentProof: HTMLImageElement;
+  firstName: String;
+  lastName: String;
+  email: String;
+  phoneNumber: String;
+  course: String;
+  paymentProof: FileList | File;
 }
