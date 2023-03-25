@@ -7,7 +7,11 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { CourseFormInput } from "../types";
 
 const CourseRegisterationForm = () => {
-  const { register, handleSubmit } = useForm<CourseFormInput>();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<CourseFormInput>();
   const onSubmit: SubmitHandler<CourseFormInput> = (data) => console.log(data);
   return (
     <>
@@ -26,21 +30,47 @@ const CourseRegisterationForm = () => {
           <FormContainer>
             <Form onSubmit={handleSubmit(onSubmit)}>
               <label>First Name</label>
-              <input type="text" {...register("firstName")} />
+              <input
+                type="text"
+                placeholder="Enter Your Firstname"
+                {...register("firstName", { required: true })}
+              />
+              {errors.firstName && <span>This field is required</span>}
               <label>Last Name</label>
-              <input type="text" {...register("lastName")} />
+              <input
+                type="text"
+                placeholder="Enter Your LastName"
+                {...register("lastName")}
+              />
               <label>Email</label>
-              <input type="email" {...register("email")} />
+              <input
+                type="email"
+                placeholder="Enter Your Email"
+                {...register("email", { required: true })}
+              />
+              {errors.email && <span>This field is required</span>}
               <label>Phone Number</label>
-              <input type="tel" {...register("phoneNumber")} />
+              <input
+                type="tel"
+                placeholder="Enter Your Mobile no."
+                {...register("phoneNumber", { required: true })}
+              />
+              {errors.phoneNumber && <span>This field is required</span>}
               <label>Course</label>
-              <input type="text" {...register("course")} />
+              <select {...register("course", { required: true })}>
+                <option value="">Select Course</option>
+                <option value="mobile-development-using-flutter-and-dart">
+                  Mobile Development Using Flutter & Dart
+                </option>
+              </select>
+              {errors.course && <span>This field is required</span>}
               <label>Payment Proof</label>
               <input
                 type="file"
                 id="paymentProof"
-                {...register("paymentProof")}
+                {...register("paymentProof", { required: true })}
               />
+              {errors.paymentProof && <span>This field is required</span>}
               <button type="submit">Submit</button>
             </Form>
           </FormContainer>
@@ -79,12 +109,61 @@ const StyledSectionHeader = styled.div`
 `;
 
 const FormContainer = styled.div`
-  margin-top: 50px;
+  margin-top: 30px;
 `;
 
 const Form = styled.form`
   display: flex;
   flex-direction: column;
-  width: 70%;
+  width: 50%;
   margin: 0 auto;
+
+  @media only screen and (max-width: 768px) {
+    width: 90%;
+  }
+
+  label {
+    font-weight: 400;
+    font-size: 20px;
+    margin-top: 20px;
+  }
+
+  input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+  }
+
+  span {
+    color: red;
+    font-size: 12px;
+    margin-top: 3px;
+  }
+
+  select {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+  }
+
+  button {
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    background-color: #f5a623;
+    color: #fff;
+    font-weight: 700;
+    font-size: 20px;
+    cursor: pointer;
+    width: 50%;
+  }
 `;
