@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Head from "next/head";
 import styled from "styled-components";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { CourseFormInput } from "../types";
+import Image from "next/image";
 
 const CourseRegisterationForm = () => {
   const {
@@ -12,7 +13,13 @@ const CourseRegisterationForm = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<CourseFormInput>();
-  const onSubmit: SubmitHandler<CourseFormInput> = (data) => console.log(data);
+
+  const [submissionDone, setSubmisssionDone] = useState(false);
+
+  const onSubmit: SubmitHandler<CourseFormInput> = (data) => {
+    console.log(data);
+    setSubmisssionDone(true);
+  };
   return (
     <>
       <Head>
@@ -28,51 +35,67 @@ const CourseRegisterationForm = () => {
             </StyledBodycopy>
           </StyledSectionHeader>
           <FormContainer>
-            <Form onSubmit={handleSubmit(onSubmit)}>
-              <label>First Name</label>
-              <input
-                type="text"
-                placeholder="Enter Your Firstname"
-                {...register("firstName", { required: true })}
-              />
-              {errors.firstName && <span>This field is required</span>}
-              <label>Last Name</label>
-              <input
-                type="text"
-                placeholder="Enter Your LastName"
-                {...register("lastName")}
-              />
-              <label>Email</label>
-              <input
-                type="email"
-                placeholder="Enter Your Email"
-                {...register("email", { required: true })}
-              />
-              {errors.email && <span>This field is required</span>}
-              <label>Phone Number</label>
-              <input
-                type="tel"
-                placeholder="Enter Your Mobile no."
-                {...register("phoneNumber", { required: true })}
-              />
-              {errors.phoneNumber && <span>This field is required</span>}
-              <label>Course</label>
-              <select {...register("course", { required: true })}>
-                <option value="">Select Course</option>
-                <option value="mobile-development-using-flutter-and-dart">
-                  Mobile Development Using Flutter & Dart
-                </option>
-              </select>
-              {errors.course && <span>This field is required</span>}
-              <label>Payment Proof</label>
-              <input
-                type="file"
-                id="paymentProof"
-                {...register("paymentProof", { required: true })}
-              />
-              {errors.paymentProof && <span>This field is required</span>}
-              <button type="submit">Submit</button>
-            </Form>
+            {!submissionDone ? (
+              <Form onSubmit={handleSubmit(onSubmit)}>
+                <label>First Name</label>
+                <input
+                  type="text"
+                  placeholder="Enter Your Firstname"
+                  {...register("firstName", { required: true })}
+                />
+                {errors.firstName && <span>This field is required</span>}
+                <label>Last Name</label>
+                <input
+                  type="text"
+                  placeholder="Enter Your LastName"
+                  {...register("lastName")}
+                />
+                <label>Email</label>
+                <input
+                  type="email"
+                  placeholder="Enter Your Email"
+                  {...register("email", { required: true })}
+                />
+                {errors.email && <span>This field is required</span>}
+                <label>Phone Number</label>
+                <input
+                  type="tel"
+                  placeholder="Enter Your Mobile no."
+                  {...register("phoneNumber", { required: true })}
+                />
+                {errors.phoneNumber && <span>This field is required</span>}
+                <label>Course</label>
+                <select {...register("course", { required: true })}>
+                  <option value="">Select Course</option>
+                  <option value="mobile-development-using-flutter-and-dart">
+                    Mobile Development Using Flutter & Dart
+                  </option>
+                </select>
+                {errors.course && <span>This field is required</span>}
+                <label>Payment Proof</label>
+                <input
+                  type="file"
+                  id="paymentProof"
+                  {...register("paymentProof", { required: true })}
+                />
+                {errors.paymentProof && <span>This field is required</span>}
+                <button type="submit">Submit</button>
+              </Form>
+            ) : (
+              <FormConfirmation>
+                <Image
+                  src="/images/check.png"
+                  alt="check"
+                  width={60}
+                  height={60}
+                />
+                <h2>
+                  Form Submitted Successfully
+                  <br />
+                  You will get a confirmation email shortly
+                </h2>
+              </FormConfirmation>
+            )}
           </FormContainer>
         </PageContainer>
         <Footer />
@@ -110,6 +133,23 @@ const StyledSectionHeader = styled.div`
 
 const FormContainer = styled.div`
   margin-top: 30px;
+`;
+
+const FormConfirmation = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 80px;
+
+  h2 {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 26px;
+    color: #a7a7a7;
+    margin-top: 20px;
+  }
 `;
 
 const Form = styled.form`
