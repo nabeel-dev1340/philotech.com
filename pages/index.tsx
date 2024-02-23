@@ -6,7 +6,7 @@ import TechStack from "../components/TechStack";
 import Hero from "../components/Hero";
 import Footer from "../components/Footer";
 import Projects from "../components/Projects";
-import ProjectsData from "../data/projects";
+import { ProjectsData } from "../data/projects";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import { Engine } from "tsparticles-engine";

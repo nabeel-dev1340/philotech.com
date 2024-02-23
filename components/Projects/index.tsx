@@ -2,10 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import ProjectCard from "../ProjectCard";
 import Link from "next/link";
-const Fade=require('react-reveal/Fade');
+const Fade = require("react-reveal/Fade");
 
 const Projects = ({ projects }: any) => {
-  const [active, setActive] = React.useState("web");
+  const [active, setActive] = React.useState("Web");
 
   const renderCards = () => {
     if (projects) {
@@ -28,9 +28,9 @@ const Projects = ({ projects }: any) => {
       <StyledToggleContainer>
         <Fade left>
           <StyledToggleItem
-            active={active.includes("web")}
+            active={active.includes("Web")}
             onClick={() => {
-              handleToggle("web");
+              handleToggle("Web");
             }}
           >
             Web
@@ -38,9 +38,9 @@ const Projects = ({ projects }: any) => {
         </Fade>
         <Fade right>
           <StyledToggleItem
-            active={active.includes("mobile")}
+            active={active.includes("Mobile")}
             onClick={() => {
-              handleToggle("mobile");
+              handleToggle("Mobile");
             }}
           >
             Mobile
@@ -50,7 +50,7 @@ const Projects = ({ projects }: any) => {
       <StyledCardsContainer>{renderCards()}</StyledCardsContainer>
       <Fade top>
         <StyledButton>
-          <Link href="/contact" style={LinkStyles}>
+          <Link href="/projects" style={LinkStyles}>
             See All Projects
           </Link>
         </StyledButton>
