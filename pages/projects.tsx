@@ -27,7 +27,9 @@ const Projects = () => {
     if (ProjectsData) {
       return ProjectsData.filter(
         (project: any) => project.type.includes(active) || active === "All"
-      ).map((project: any) => <ProjectCard key={project.id} {...project} />);
+      ).map((project: any) => (
+        <ProjectCard key={project.id} {...project} viewType="modal" />
+      ));
     }
   };
 

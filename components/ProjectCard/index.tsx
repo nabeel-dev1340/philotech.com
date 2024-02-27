@@ -2,19 +2,42 @@ import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
 import TechCapsule from "../TechCapsule";
-const Fade = require("react-reveal/Fade")
+const Fade = require("react-reveal/Fade");
 
 interface ProjectCardProps {
   title?: string;
   url?: string | "#";
   techStack?: string[];
   images: string[];
+  viewType: string;
 }
 
-const ProjectCard = ({ title, url, techStack, images }: ProjectCardProps) => {
+const ProjectCard = ({
+  title,
+  url,
+  techStack,
+  images,
+  viewType,
+}: ProjectCardProps) => {
   const renderCapsules = () => {
     if (techStack) {
       return techStack.map((tech) => <TechCapsule key={tech} name={tech} />);
+    }
+  };
+
+  const renderViewType = () => {
+    if (viewType === "modal") {
+      return (
+        <ProjectCardLink href={url} target="_blank" rel="noopener noreferrer">
+          View Details
+        </ProjectCardLink>
+      );
+    } else if (viewType === "link") {
+      return (
+        <ProjectCardLink href={url} target="_blank" rel="noopener noreferrer">
+          View Live
+        </ProjectCardLink>
+      );
     }
   };
 
@@ -32,9 +55,7 @@ const ProjectCard = ({ title, url, techStack, images }: ProjectCardProps) => {
         </StyledImage>
         <ProjectCardHeading>{title}</ProjectCardHeading>
         <CapsulesContainer>{renderCapsules()}</CapsulesContainer>
-        <ProjectCardLink href={url} target="_blank" rel="noopener noreferrer">
-          View Project
-        </ProjectCardLink>
+        {renderViewType()}
       </ProjectCardContainer>
     </Fade>
   );

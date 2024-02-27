@@ -11,7 +11,9 @@ const Projects = ({ projects }: any) => {
     if (projects) {
       return projects
         .filter((project: any) => project.type.includes(active))
-        .map((project: any) => <ProjectCard key={project.id} {...project} />);
+        .map((project: any) => (
+          <ProjectCard key={project.id} {...project} viewType="link" />
+        ));
     }
   };
 
